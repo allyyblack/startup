@@ -18,5 +18,10 @@ http://54.173.171.189/
 ssh -i startup.pem ubuntu@54.173.171.189
 ```
 
+### Command to Deploy into production
+```
+./deployFiles.sh -k <yourpemkey> -h <yourdomain> -s <landing page>
+```
+
 
 
