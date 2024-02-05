@@ -28,3 +28,14 @@ I am going to use the required technologies in the following ways.
 - Database data: This will be the ranking of each user after they have recieved 5 ratings from other users, stores users and ranks.
 - WebSocket data: This will be used with the chat function of the application between users.
 - React:  Application ported to use the React web framework.
+
+## HTML Deliverable
+
+For this deliverable I built out the structure of my application using HTML.
+
+- HTML pages: Four HTML page that represent the ability to login, connect to other users, chat with other users, and an about page
+-Links: All of the pages link to the other pages.
+-Text: The image on the about page has a textual description.
+-Images: I have images on the connect page that will be collected from the users. I also have an image on the about page. 
+-DB/Login: Input box and submit button for login. The connect page has a list of users that have already submitted their information. 
+-WebSocket: The reply button on the chat page will link with a chat service.
