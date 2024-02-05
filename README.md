@@ -34,8 +34,8 @@ I am going to use the required technologies in the following ways.
 For this deliverable I built out the structure of my application using HTML.
 
 - HTML pages: Four HTML page that represent the ability to login, connect to other users, chat with other users, and an about page
--Links: All of the pages link to the other pages.
--Text: The image on the about page has a textual description.
--Images: I have images on the connect page that will be collected from the users. I also have an image on the about page. 
--DB/Login: Input box and submit button for login. The connect page has a list of users that have already submitted their information. 
--WebSocket: The reply button on the chat page will link with a chat service.
+- Links: All of the pages link to the other pages.
+- Text: The image on the about page has a textual description.
+- Images: I have images on the connect page that will be collected from the users. I also have an image on the about page. 
+- DB/Login: Input box and submit button for login. The connect page has a list of users that have already submitted their information. 
+- WebSocket: The reply button on the chat page will link with a chat service.
