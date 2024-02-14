@@ -6,7 +6,7 @@ header {
 }
 
 body {
-    display: flex
+    display: flex;
     flex-direction: column;
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -22,3 +22,31 @@ main {
     justify-content: space-around;
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ddd;
+}
