@@ -39,3 +39,14 @@ For this deliverable I built out the structure of my application using HTML.
 - Images: I have images on the connect page that will be collected from the users. I also have an image on the about page. 
 - DB/Login: Input box and submit button for login. The connect page has a list of users that have already submitted their information. 
 - WebSocket: The reply button on the chat page will link with a chat service.
+
+## CSS Deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- Header, footer, and main content body
+- Navigation elements: I dropped the underlines for the menu and make the buttons look more appealing.
+- Responsive to window resizing: My app looks great on all window sizes and devices
+- Application elements: Used good contrast and whitespace
+- Application text content: Consistent fonts
+- Application images: The images are now in good locations and the image on the about page uses flex to look good in all window sizes. 
