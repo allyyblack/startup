@@ -8,6 +8,7 @@ header {
 body {
     display: flex;
     flex-direction: column;
+    min-width: 375px;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -65,9 +66,25 @@ menu {
 
   footer {
     text-align: center;
-    background-color: #8a94dd;
-    color: #fff;
+    background-color: #ced1e2;
+    color: black;
     flex: 0 30px;
   }
+
+  @media (max-height: 600px) {
+    header {
+      display: none;
+    }
+    footer {
+      display: none;
+    }
+    main {
+      flex: 1 100vh;
+    }
+  }
+
+  
+  
+
 
   
