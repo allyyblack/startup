@@ -59,3 +59,15 @@ menu {
     justify-content: center;
   }
 
+  button:hover {
+    background-color: #8a94dd;
+  }
+
+  footer {
+    text-align: center;
+    background-color: #8a94dd;
+    color: #fff;
+    flex: 0 30px;
+  }
+
+  
