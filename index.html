@@ -1,4 +1,5 @@
 <head>
+  <script src="login.js"></script>
   <title>Picklr HTML</title>
   <link rel="stylesheet" href="main.css">
 </head>
@@ -18,11 +19,11 @@
   <main>
     <h1>Welcome</h1>
     <p>Login to connect with picklrs</p>
-    <form method="get" action="connect.html">
+    <form onsubmit="login(); return false;">
       <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Your name here" />
-      <button type="submit">Login</button>
-    </form>
+      <input type="text" id="name" placeholder="Your name here" required />
+      <button type="submit" class="btn btn-primary">Login</button>
+  </form>
   </main>
 
   <footer>

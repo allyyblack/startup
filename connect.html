@@ -16,6 +16,8 @@
     </header>
 
 <main>
+  <h2>Welcome to Connect, <span id="userNameDisplay"></span>!</h2>
+  <p>Explore and connect with other Picklrs.</p>
     <ul>
         <li>
             <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1707091200&semt=sph" alt="John Doe">
@@ -54,4 +56,12 @@
 <footer>
     <div><a href=https://github.com/allyyblack/startup.git>My GitHub repo</a></div>
   </footer>
+  <script>
+    const storedUserName = localStorage.getItem("userName");
+
+    if (storedUserName) {
+      const userNameDisplay = document.getElementById("userNameDisplay");
+      userNameDisplay.textContent = storedUserName;
+    }
+  </script>
 </body>
