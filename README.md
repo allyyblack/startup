@@ -50,3 +50,12 @@ For this deliverable I properly styled the application into its final appearance
 - Application elements: Used good contrast and whitespace
 - Application text content: Consistent fonts
 - Application images: The images are now in good locations and the image on the about page uses flex to look good in all window sizes. 
+
+## JavaScript Deliverable
+
+For this deliverable I implemented by JavaScript so that the application works for a single user. I also added placeholders for future technology.
+
+-login : When you press the login button it takes you to the connect page. 
+-database: Displays the users and their pictures that they uploaded from a link. Currently the list of pickleball users is collected from local storage, but this will be database storage later. 
+-Websocket: I used the setInterval function to periodically display a message. This will be replaced with WebSocket messages later.
+-Application Logic: The connect page uploads the image that the user implemented on the login page.
