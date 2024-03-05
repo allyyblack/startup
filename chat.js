@@ -5,7 +5,6 @@ function sendMessage() {
   if (userMessage.trim() !== '') {
     chat += `<br>You: ${userMessage}`;
     document.querySelector('#chat-response').innerHTML = chat;
-    // You can also clear the input field after sending a message
     document.getElementById('user-message').value = '';
   }
 }

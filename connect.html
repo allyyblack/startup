@@ -15,15 +15,17 @@
       </nav>
     </header>
 
+    
+
 <main>
   <h2>Welcome to Connect, <span id="userNameDisplay"></span>!</h2>
   <p>Explore and connect with other Picklrs.</p>
-    <ul>
+  <ul id="userList"></ul>
+    <!-- <ul>
         <li>
-            <img src="https://img.freepik.com/free-photo/young-bearded-man-with-striped-shirt_273609-5677.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1707091200&semt=sph" alt="John Doe">
+            <img src="userImage" alt="userNameDisplay">
             <div class="person-info">
-              <h2>John Doe</h2>
-            <p>I love to play pickleball outside with friends. Message me to find a new pickleball buddy!</p>
+              <h2></h2>
             <p>Ranking: 4 out of 5</p>
             <p><a href="chat.html">Chat</a></p>
             </div>
@@ -35,7 +37,6 @@
             <img src="https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg" alt="John Doe">
             <div class="person-info">
             <h2>Jane Smith</h2>
-            <p>I play in pickleball tournaments quite frequently. I am looking for other doubles partners that are looking to practice. </p>
             <p>Ranking: 5 out of 5</p>
             <p><a href="chat.html">Chat</a></p>
           </div>
@@ -50,18 +51,69 @@
             <p><a href="chat.html">Chat</a></p>
           </div>
         </li>
-    </ul>
+    </ul> -->
 
 </main>
 <footer>
     <div><a href=https://github.com/allyyblack/startup.git>My GitHub repo</a></div>
   </footer>
   <script>
-    const storedUserName = localStorage.getItem("userName");
+    document.addEventListener("DOMContentLoaded", function () {
+        const storedUserName = localStorage.getItem("userName");
+        const storedImageLink = localStorage.getItem("imageLink");
 
-    if (storedUserName) {
-      const userNameDisplay = document.getElementById("userNameDisplay");
-      userNameDisplay.textContent = storedUserName;
-    }
-  </script>
+        if (storedUserName && storedImageLink) {
+            const userNameDisplay = document.getElementById("userNameDisplay");
+            const userImage = document.createElement("img");
+            const userRanking = document.createElement("p");
+            const userChatLink = document.createElement("p");
+
+            userNameDisplay.textContent = storedUserName;
+            userImage.src = storedImageLink;
+
+            const userContainer = document.createElement("li");
+            userContainer.appendChild(userImage);
+
+            const personInfo = document.createElement("div");
+            personInfo.className = "person-info";
+            personInfo.appendChild(userRanking);
+            personInfo.appendChild(userChatLink);
+            userContainer.appendChild(personInfo);
+
+            const userList = document.getElementById("userList");
+            userList.appendChild(userContainer);
+        }
+
+        const storedUsers = localStorage.getItem("users");
+
+        if (storedUsers) {
+            const parsedUsers = JSON.parse(storedUsers);
+
+            parsedUsers.forEach(function (user) {
+                const userImage = document.createElement("img");
+                const userName = document.createElement("h2");
+                const userRanking = document.createElement("p");
+                const userChatLink = document.createElement("p");
+
+                userImage.src = user.imageLink;
+                userName.textContent = user.name;
+                userRanking.textContent = `Ranking: ${user.ranking || 'N/A'}`;
+                userChatLink.innerHTML = `<a href="chat.html">Chat</a>`;
+
+                const userContainer = document.createElement("li");
+                userContainer.appendChild(userImage);
+
+                const personInfo = document.createElement("div");
+                personInfo.className = "person-info";
+                personInfo.appendChild(userName);
+                personInfo.appendChild(userRanking);
+                personInfo.appendChild(userChatLink);
+                userContainer.appendChild(personInfo);
+
+                const userList = document.getElementById("userList");
+                userList.appendChild(userContainer);
+            });
+        }
+    });
+</script>
 </body>
