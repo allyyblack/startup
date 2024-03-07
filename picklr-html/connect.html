@@ -1,0 +1,119 @@
+<head>
+    <title>Picklr HTML</title>
+    <link rel="stylesheet" href="connect.css">
+  </head>
+  <body>
+    <header>
+      <h1>Picklr</h1>
+      <nav>
+        <menu>
+          <li><a href="index.html">Home</a></li>
+            <li><a href="connect.html">Connect</a></li>
+            <li><a href="chat.html">Chat</a></li>
+            <li><a href="about.html">About</a></li>
+        </menu>
+      </nav>
+    </header>
+
+    
+
+<main>
+  <h2>Welcome to Connect, <span id="userNameDisplay"></span>!</h2>
+  <p>Explore and connect with other Picklrs.</p>
+  <ul id="userList"></ul>
+    <!-- <ul>
+        <li>
+            <img src="userImage" alt="userNameDisplay">
+            <div class="person-info">
+              <h2></h2>
+            <p>Ranking: 4 out of 5</p>
+            <p><a href="chat.html">Chat</a></p>
+            </div>
+
+
+        </li>
+    
+        <li>
+            <img src="https://t4.ftcdn.net/jpg/03/83/25/83/360_F_383258331_D8imaEMl8Q3lf7EKU2Pi78Cn0R7KkW9o.jpg" alt="John Doe">
+            <div class="person-info">
+            <h2>Jane Smith</h2>
+            <p>Ranking: 5 out of 5</p>
+            <p><a href="chat.html">Chat</a></p>
+          </div>
+        </li>
+    
+        <li>
+            <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" alt="John Doe">
+            <div class="person-info">
+              <h2>Bob Johnson</h2>
+            <p>I have not played pickleball that much but I would love to learn more!</p>
+            <p>Ranking: 2 out of 5</p>
+            <p><a href="chat.html">Chat</a></p>
+          </div>
+        </li>
+    </ul> -->
+
+</main>
+<footer>
+    <div><a href=https://github.com/allyyblack/startup.git>My GitHub repo</a></div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const storedUserName = localStorage.getItem("userName");
+        const storedImageLink = localStorage.getItem("imageLink");
+
+        if (storedUserName && storedImageLink) {
+            const userNameDisplay = document.getElementById("userNameDisplay");
+            const userImage = document.createElement("img");
+            const userRanking = document.createElement("p");
+            const userChatLink = document.createElement("p");
+
+            userNameDisplay.textContent = storedUserName;
+            userImage.src = storedImageLink;
+
+            const userContainer = document.createElement("li");
+            userContainer.appendChild(userImage);
+
+            const personInfo = document.createElement("div");
+            personInfo.className = "person-info";
+            personInfo.appendChild(userRanking);
+            personInfo.appendChild(userChatLink);
+            userContainer.appendChild(personInfo);
+
+            const userList = document.getElementById("userList");
+            userList.appendChild(userContainer);
+        }
+
+        const storedUsers = localStorage.getItem("users");
+
+        if (storedUsers) {
+            const parsedUsers = JSON.parse(storedUsers);
+
+            parsedUsers.forEach(function (user) {
+                const userImage = document.createElement("img");
+                const userName = document.createElement("h2");
+                const userRanking = document.createElement("p");
+                const userChatLink = document.createElement("p");
+
+                userImage.src = user.imageLink;
+                userName.textContent = user.name;
+                userRanking.textContent = `Ranking: ${user.ranking || 'N/A'}`;
+                userChatLink.innerHTML = `<a href="chat.html">Chat</a>`;
+
+                const userContainer = document.createElement("li");
+                userContainer.appendChild(userImage);
+
+                const personInfo = document.createElement("div");
+                personInfo.className = "person-info";
+                personInfo.appendChild(userName);
+                personInfo.appendChild(userRanking);
+                personInfo.appendChild(userChatLink);
+                userContainer.appendChild(personInfo);
+
+                const userList = document.getElementById("userList");
+                userList.appendChild(userContainer);
+            });
+        }
+    });
+</script>
+</body>
