@@ -27,7 +27,7 @@ async function login() {
             window.location.href = "connect.html";
         }
       } catch {
-        // If there was an error then just track scores locally
+        console.log("This shouldn't happen!! teehee💩❤️")
       }
 
     success = response.json();
