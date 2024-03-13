@@ -1,30 +1,36 @@
-// function login() {
-//   const nameEl = document.querySelector("#name");
-//   const imageLinkEl = document.querySelector("#imageLink");
-
-//   localStorage.setItem("userName", nameEl.value);
-//   localStorage.setItem("imageLink", imageLinkEl.value);
-
-//   window.location.href = "connect.html";
-// }
-
-// Initialize an array to store user information
 const users = [];
 
-function login() {
-    const nameEl = document.querySelector("#name");
-    const imageLinkEl = document.querySelector("#imageLink");
+async function login() {
+    try {
+        const response = await fetch('/api/connect', {
+          method: 'POST',
+          headers: {'content-type': 'application/json'},
+          body: JSON.stringify(),
+        });
+  
+        // Store what the service gave us as the high scores
+        const success = await response.json();
 
-    const user = {
-        name: nameEl.value,
-        imageLink: imageLinkEl.value
-    };
+        if (success) {
+            const nameEl = document.querySelector("#name");
+            const imageLinkEl = document.querySelector("#imageLink");
+        
+            const user = {
+                name: nameEl.value,
+                imageLink: imageLinkEl.value
+            };
+        
+            users.push(user);
+        
+            localStorage.setItem("users", JSON.stringify(users));
+        
+            window.location.href = "connect.html";
+        }
+      } catch {
+        // If there was an error then just track scores locally
+      }
 
-    users.push(user);
-
-    localStorage.setItem("users", JSON.stringify(users));
-
-    window.location.href = "connect.html";
+    success = response.json();
 }
 
 document.addEventListener("DOMContentLoaded", function () {

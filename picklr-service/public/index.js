@@ -14,9 +14,8 @@ app.use(express.static('public'));
 const apiRouter = express.Router();
 app.use(`/api`, apiRouter);
 
-// // GetScores
 apiRouter.post('/connect', (_req, res) => {
-  res.send("TEST");
+  res.send(true);
 });
 
 // Return the application's default page if the path is unknown
