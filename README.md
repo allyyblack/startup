@@ -59,3 +59,14 @@ For this deliverable I implemented by JavaScript so that the application works f
 - Database: Displays the users and their pictures that they uploaded from a link. Currently the list of pickleball users is collected from local storage, but this will be database storage later. 
 - Websocket: I used the setInterval function to periodically display a message. This will be replaced with WebSocket messages later.
 - Application Logic: The connect page uploads the image that the user implemented on the login page.
+
+
+## Service Deliverable
+
+For this deliverable I added backend endpoints that receives login information
+
+- Node.js/Express HTTP service: done!
+- Static middleware for frontend: done!
+- Calls to third party endpoints: I didn't have time to implement this. 😔
+- Backend service endpoints: Placeholders for login that stores the current user on the server.
+- Frontend calls service endpoints: I did this using the fetch function.
