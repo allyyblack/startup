@@ -21,7 +21,7 @@ app.use(`/api`, apiRouter);
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'public' });
+  res.sendFile('public/index.html', { root: 'picklr-service' });
 });
 
 app.listen(port, () => {
