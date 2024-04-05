@@ -43,6 +43,4 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addScore,
-  getHighScores,
 };
