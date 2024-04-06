@@ -1,51 +1,57 @@
 const users = [];
 
-// async function login() {
-//     const nameEl = document.querySelector("#name");
-//     localStorage.setItem("userName", nameEl.value);
+async function createUser() {
+    loginOrCreate(`/api/auth/create`);
+  }
 
-//     const imageLinkEl = document.querySelector("#imageLink");
-//     localStorage.setItem("imageLink", imageLinkEl.value);
 
-//     // const passwordEl = document.querySelector("#userPassword");
-//     // localStorage.setItem("userPassword", passwordEl.value);
 
-//     window.location.href = "connect.html";
-//     // try {
-//     //     const response = await fetch('/api/connect', {
-//     //       method: 'POST',
-//     //       headers: {'content-type': 'application/json'},
-//     //       body: JSON.stringify(),
-//     //     });
+
+async function login() {
+    const nameEl = document.querySelector("#name");
+    localStorage.setItem("userName", nameEl.value);
+
+    const imageLinkEl = document.querySelector("#imageLink");
+    localStorage.setItem("imageLink", imageLinkEl.value);
+
+    // const passwordEl = document.querySelector("#userPassword");
+    // localStorage.setItem("userPassword", passwordEl.value);
+
+    window.location.href = "connect.html";
+    // try {
+    //     const response = await fetch('/api/connect', {
+    //       method: 'POST',
+    //       headers: {'content-type': 'application/json'},
+    //       body: JSON.stringify(),
+    //     });
   
-//     //     // Store what the service gave us as the high scores
-//     //     const success = await response.json();
+    //     // Store what the service gave us as the high scores
+    //     const success = await response.json();
 
-//     //     if (success) {
-//     //         const nameEl = document.querySelector("#name");
-//     //         const imageLinkEl = document.querySelector("#imageLink");
+    //     if (success) {
+    //         const nameEl = document.querySelector("#name");
+    //         const imageLinkEl = document.querySelector("#imageLink");
         
-//     //         const user = {
-//     //             name: nameEl.value,
-//     //             imageLink: imageLinkEl.value
-//     //         };
+    //         const user = {
+    //             name: nameEl.value,
+    //             imageLink: imageLinkEl.value
+    //         };
         
-//     //         users.push(user);
+    //         users.push(user);
         
-//     //         localStorage.setItem("users", JSON.stringify(users));
+    //         localStorage.setItem("users", JSON.stringify(users));
         
-//     //         window.location.href = "connect.html";
-//     //     }
-//     //   } catch {
-//     //     console.log("This shouldn't happen!! teehee💩❤️")
-//     //   }
+    //         window.location.href = "connect.html";
+    //     }
+    //   } catch {
+    //     console.log("This shouldn't happen!! teehee💩❤️")
+    //   }
 
-//     // success = response.json();
-// }
+    // success = response.json();
+}
 
 
 async function createUser() {
-    console.log("HERE2")
     const nameEl = document.querySelector("#newName");
     localStorage.setItem("userName", nameEl.value);
 

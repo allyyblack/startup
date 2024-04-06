@@ -28,7 +28,6 @@
 </footer>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    console.log("HERE");
       const storedUserName = localStorage.getItem("userName");
       const storedImageLink = localStorage.getItem("imageLink");
 
@@ -55,28 +54,26 @@
       }
       
       if (storedUsers) {
-        console.log(storedUsers);
+        storedUsers.forEach(function (user) {
+            const userImage = document.createElement("img");
+            const userName = document.createElement("h2");
+            const userChatLink = document.createElement("p");
 
-          storedUsers.forEach(function (user) {
-              const userImage = document.createElement("img");
-              const userName = document.createElement("h2");
-              const userChatLink = document.createElement("p");
+            userImage.src = user.imageLink;
+            userName.textContent = user.name;
+            userChatLink.innerHTML = `<a href="chat.html">Chat</a>`;
 
-              userImage.src = user.imageLink;
-              userName.textContent = user.name;
-              userChatLink.innerHTML = `<a href="chat.html">Chat</a>`;
+            const userContainer = document.createElement("li");
+            userContainer.appendChild(userImage);
 
-              const userContainer = document.createElement("li");
-              userContainer.appendChild(userImage);
+            const personInfo = document.createElement("div");
+            personInfo.className = "person-info";
+            personInfo.appendChild(userName);
+            personInfo.appendChild(userChatLink);
+            userContainer.appendChild(personInfo);
 
-              const personInfo = document.createElement("div");
-              personInfo.className = "person-info";
-              personInfo.appendChild(userName);
-              personInfo.appendChild(userChatLink);
-              userContainer.appendChild(personInfo);
-
-              const userList = document.getElementById("userList");
-              userList.appendChild(userContainer);
+            const userList = document.getElementById("userList");
+            userList.appendChild(userContainer);
           });
       }
   });
