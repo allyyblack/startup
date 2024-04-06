@@ -9,29 +9,26 @@ async function loginUser() {
   }
 
   async function loginOrCreate(endpoint) {
-    // const userName = document.querySelector('#userName')?.value;
-    // const password = document.querySelector('#userPassword')?.value;
 
-    const nameEl = document.querySelector("#newName");
-    localStorage.setItem("userName", nameEl.value);
+    const nameEl = document.querySelector("#newName")?.value;
 
-    const imageLinkEl = document.querySelector("#imageLink");
-    localStorage.setItem("imageLink", imageLinkEl.value);
+    const imageLinkEl = document.querySelector("#imageLink")?.value;
 
-    // const passwordEl = document.querySelector("#userPassword");
-    // localStorage.setItem("userPassword", passwordEl.value);
+    const passwordEl = document.querySelector("#newUserPassword")?.value;
     
     const response = await fetch(endpoint, {
       method: 'post',
-      body: JSON.stringify({ email: userName, password: password }),
+      body: JSON.stringify({ email: nameEl, password: passwordEl }),
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
     });
   
     if (response.ok) {
-      localStorage.setItem('userName', userName);
-      window.location.href = 'play.html';
+        localStorage.setItem('userName', nameEl);
+        localStorage.setItem("imageLink", imageLinkEl);
+
+      window.location.href = 'connect.html';
     } else {
       const body = await response.json();
       const modalEl = document.querySelector('#msgModal');
@@ -88,17 +85,17 @@ async function login() {
 }
 
 
-async function createUser() {
-    const nameEl = document.querySelector("#newName");
-    localStorage.setItem("userName", nameEl.value);
+// async function createUser() {
+//     const nameEl = document.querySelector("#newName");
+//     localStorage.setItem("userName", nameEl.value);
 
-    const imageLinkEl = document.querySelector("#imageLink");
-    localStorage.setItem("imageLink", imageLinkEl.value);
+//     const imageLinkEl = document.querySelector("#imageLink");
+//     localStorage.setItem("imageLink", imageLinkEl.value);
 
-    // const passwordEl = document.querySelector("#userPassword");
-    // localStorage.setItem("userPassword", passwordEl.value);
+//     // const passwordEl = document.querySelector("#userPassword");
+//     // localStorage.setItem("userPassword", passwordEl.value);
 
-    window.location.href = "connect.html";
+//     window.location.href = "connect.html";
     // try {
     //     const response = await fetch('/api/connect', {
     //       method: 'POST',
@@ -129,33 +126,33 @@ async function createUser() {
     //   }
 
     // success = response.json();
-}
+// }
 
-document.addEventListener("DOMContentLoaded", function () {
-    const storedUserName = localStorage.getItem("userName");
-    const storedImageLink = localStorage.getItem("imageLink");
+// document.addEventListener("DOMContentLoaded", function () {
+//     const storedUserName = localStorage.getItem("userName");
+//     const storedImageLink = localStorage.getItem("imageLink");
 
 
-    if (storedUserName && storedImageLink) {
-        const userNameDisplay = document.getElementById("userNameDisplay");
-        const userImage = document.querySelector("ul li img");
+//     if (storedUserName && storedImageLink) {
+//         const userNameDisplay = document.getElementById("userNameDisplay");
+//         const userImage = document.querySelector("ul li img");
 
-        userNameDisplay.textContent = storedUserName;
-        userImage.src = storedImageLink;
-    }
+//         userNameDisplay.textContent = storedUserName;
+//         userImage.src = storedImageLink;
+//     }
 
-    const storedUsers = localStorage.getItem("users");
+//     const storedUsers = localStorage.getItem("users");
 
-    if (storedUsers) {
-        const parsedUsers = JSON.parse(storedUsers);
+//     if (storedUsers) {
+//         const parsedUsers = JSON.parse(storedUsers);
 
-        parsedUsers.forEach(function (user) {
-            const userList = document.getElementById("userList");
+//         parsedUsers.forEach(function (user) {
+//             const userList = document.getElementById("userList");
 
-            const listItem = document.createElement("li");
-            listItem.textContent = user.name;
+//             const listItem = document.createElement("li");
+//             listItem.textContent = user.name;
 
-            userList.appendChild(listItem);
-        });
-    }
-});
+//             userList.appendChild(listItem);
+//         });
+//     }
+// });
