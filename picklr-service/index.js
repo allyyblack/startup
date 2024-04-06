@@ -8,7 +8,7 @@ const port = process.argv.length > 2 ? process.argv[2] : 4000;
 app.use(express.json());
 
 // Serve up the frontend static content hosting
-app.use(express.static('public'));
+app.use(express.static('picklr-service/public'));
 
 // Router for service endpoints
 const apiRouter = express.Router();
