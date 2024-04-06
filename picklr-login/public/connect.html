@@ -28,6 +28,7 @@
 </footer>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    console.log("HERE");
       const storedUserName = localStorage.getItem("userName");
       const storedImageLink = localStorage.getItem("imageLink");
 
@@ -39,7 +40,7 @@
 
       if (storedUserName && storedImageLink) {
 
-          const userNameDisplay = document.getElementById("userNameDisplay");
+        const userNameDisplay = document.getElementById("userNameDisplay");
         userNameDisplay.textContent = storedUserName;
         document.getElementById('userNameDisplay').innerHTML = userNameDisplay;
 
@@ -54,6 +55,7 @@
       }
       
       if (storedUsers) {
+        console.log(storedUsers);
 
           storedUsers.forEach(function (user) {
               const userImage = document.createElement("img");
