@@ -27,6 +27,8 @@ async function loginUser() {
     if (response.ok) {
         localStorage.setItem('userName', nameEl);
         localStorage.setItem("imageLink", imageLinkEl);
+        localStorage.setItem("currentUser", nameEl);
+
 
       window.location.href = 'connect.html';
     } else {
@@ -38,9 +40,6 @@ async function loginUser() {
     }
   }
 
-
-
-
 async function login() {
     const nameEl = document.querySelector("#name");
     localStorage.setItem("userName", nameEl.value);
@@ -50,5 +49,4 @@ async function login() {
 
     window.location.href = "connect.html";
 }
- 
 

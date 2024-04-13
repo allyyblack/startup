@@ -18,7 +18,7 @@
   
 
 <main>
-<h2>Welcome to Connect, <span id="userNameDisplay"></span>!</h2>
+<h2>Welcome to Connect, <span id="currentUser"></span>!</h2>
 <p>Explore and connect with other Picklrs.</p>
 <ul id="userList"></ul>
 
@@ -30,6 +30,8 @@
   document.addEventListener("DOMContentLoaded", function () {
       const storedUserName = localStorage.getItem("userName");
       const storedImageLink = localStorage.getItem("imageLink");
+      const currentUser = document.getElementById("currentUser");
+      currentUser.innerHTML = storedUserName;
 
       var storedUsers = JSON.parse(localStorage.getItem("newUserss"));
 
@@ -41,7 +43,6 @@
 
         const userNameDisplay = document.getElementById("userNameDisplay");
         userNameDisplay.textContent = storedUserName;
-        document.getElementById('userNameDisplay').innerHTML = userNameDisplay;
 
         const newUser = {name: storedUserName, imageLink: storedImageLink};
 
