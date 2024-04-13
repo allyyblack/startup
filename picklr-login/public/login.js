@@ -1,3 +1,15 @@
+(async () => {
+  const userName = localStorage.getItem('userName');
+  if (userName) {
+    // document.querySelector('#playerName').textContent = userName;
+    // setDisplay('loginControls', 'none');
+    setDisplay('menu', 'block');
+  } else {
+    // setDisplay('loginControls', 'block');
+    setDisplay('menu', 'none');
+  }
+})();
+
 const users = [];
 
 async function loginUser() {
