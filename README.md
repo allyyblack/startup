@@ -70,3 +70,12 @@ For this deliverable a user is logged in and can see other available users to co
  existing user - Stores a profile picture link in the database for the given user.
  Use MongoDB to store credentials - Stores both user and their profile.
  Restricts functionality - You cannot view other users until you are logged in 
+
+ ## WebSocket deliverable
+
+For this deliverable I used webSocket to update the votes on the frontend in realtime.
+
+ Backend listens for WebSocket connection 
+ Frontend makes WebSocket connection 
+ Data sent over WebSocket connection 
+ WebSocket data displayed - All user info shows
