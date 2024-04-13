@@ -59,3 +59,14 @@ For this deliverable I implemented by JavaScript so that the application works f
 - Database: Displays the users and their pictures that they uploaded from a link. Currently the list of pickleball users is collected from local storage, but this will be database storage later. 
 - Websocket: I used the setInterval function to periodically display a message. This will be replaced with WebSocket messages later.
 - Application Logic: The connect page uploads the image that the user implemented on the login page.
+
+## DB/Login deliverable
+
+For this deliverable a user is logged in and can see other available users to connect with that are stored in the database
+
+ MongoDB Atlas database created - done!
+ Stores data in MongoDB - done!
+ User registration - Creates a new account in the database.
+ existing user - Stores a profile picture link in the database for the given user.
+ Use MongoDB to store credentials - Stores both user and their profile.
+ Restricts functionality - You cannot view other users until you are logged in 
