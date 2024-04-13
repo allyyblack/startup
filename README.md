@@ -73,7 +73,7 @@ For this deliverable a user is logged in and can see other available users to co
 
  ## WebSocket deliverable
 
-For this deliverable I used webSocket to update the votes on the frontend in realtime.
+For this deliverable I used webSocket to update the user info on the frontend in realtime.
 
  Backend listens for WebSocket connection 
  Frontend makes WebSocket connection 
