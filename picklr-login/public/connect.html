@@ -17,7 +17,7 @@
 
   
 
-<main data-show-if="currentUser!=null">
+<main>
 <h2>Welcome to Connect, <span id="currentUser"></span>!</h2>
 <p>Explore and connect with other Picklrs.</p>
 <ul id="userList"></ul>
@@ -41,8 +41,8 @@
 
       if (storedUserName && storedImageLink) {
 
-        const userNameDisplay = document.getElementById("userNameDisplay");
-        userNameDisplay.textContent = storedUserName;
+        // const userNameDisplay = document.getElementById("userNameDisplay");
+        // userNameDisplay.textContent = storedUserName;
 
         const newUser = {name: storedUserName, imageLink: storedImageLink};
 
