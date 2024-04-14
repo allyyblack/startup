@@ -51,7 +51,7 @@ apiRouter.post('/auth/login', async (req, res) => {
       return;
     }
   }
-  res.status(401).send({ msg: 'Unauthorized' });
+  res.status(401).send({ msg: 'Unauthorized: try creating a new user' });
 });
 
 // DeleteAuth token if stored in cookie
