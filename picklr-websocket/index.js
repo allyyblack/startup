@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Serve up the frontend static content hosting
-app.use(express.static('picklr-websocket/public'));
+app.use(express.static('public'));
 
 // Trust headers that are forwarded from the proxy so we can determine IP addresses
 app.set('trust proxy', true);
@@ -156,7 +156,7 @@ app.use(function (err, req, res, next) {
 
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
-  res.sendFile('index.html', { root: 'picklr-websocket/public' });
+  res.sendFile('index.html', { root: 'public' });
 });
 
 // setAuthCookie in the HTTP response
