@@ -78,4 +78,13 @@ For this deliverable I used webSocket to update the user info on the frontend in
  Backend listens for WebSocket connection 
  Frontend makes WebSocket connection 
  Data sent over WebSocket connection 
- WebSocket data displayed - All user info shows
+ WebSocket data displayed - All user chats show
+
+ ## React deliverable
+
+For this deliverable I converted the application over to use React.
+
+ Bundled and transpiled
+ Components - Login, user list, chat are all components.
+ Router - Routing between login and chat components.
+ Hooks - React uses class properties instead of UseState to track changes in chat state.
