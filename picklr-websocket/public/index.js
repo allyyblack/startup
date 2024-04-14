@@ -71,10 +71,6 @@ apiRouter.get('/user/:email', async (req, res) => {
   res.status(404).send({ msg: 'Unknown' });
 });
 
-apiRouter.post('/connect', (_req, res) => {
-    res.send(true);
-});
-
 // Return the application's default page if the path is unknown
 app.use((_req, res) => {
   res.sendFile('index.html', { root: 'picklr-websocket/public' });
