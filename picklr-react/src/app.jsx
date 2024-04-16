@@ -30,7 +30,7 @@ export default function App() {
         <Route path='/connect' element={<Connect />} />
         <Route path='/chat' element={<Chat />} />
         <Route path='/about' element={<About />} />
-        <Route path='*' element={<NotFound />} />
+        <Route path='*' element={<Login />} />
     </Routes>
 
   

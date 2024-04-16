@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import * as bootstrap from 'bootstrap';
+window.bootstrap = bootstrap;
 
 import $ from 'jquery';
 window.$ = $;
