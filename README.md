@@ -85,6 +85,6 @@ For this deliverable I used webSocket to update the user info on the frontend in
 For this deliverable I converted the application over to use React.
 
  Bundled and transpiled
- Components - Login, user list, chat are all components. I modified my chat compenent since I was having issues with it.
- Router - Routing between login and chat components.
+ Components - Login, user list, about page are all components. I modified my chat compenent to still use the html since I was having issues with it and I figured I met the requirement for Multiple functional React components with the three I do have converted.
+ Router - Routing between all components.
  Hooks - React uses hooks to track changes in login state and connected users.

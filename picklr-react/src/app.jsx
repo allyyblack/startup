@@ -20,7 +20,7 @@ export default function App() {
         <menu>
             <li><NavLink to="index">Home</NavLink></li>
             <li><NavLink to="connect">Connect</NavLink></li>
-            <li><NavLink to="chat">Chat</NavLink></li>
+            <li><a href="chat.html">Chat</a></li>
             <li><NavLink to="about">About</NavLink></li>
         </menu>
       </nav>
