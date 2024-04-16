@@ -6,22 +6,22 @@ import Parser from 'html-react-parser';
 // import { sendMessage } from '/chatClient.js';
 
 export function Chat({}) {
-//   let newMessage = useRef();
-//   let name = useRef();
-//   let chatText = []
+  let newMessage = useRef();
+  let name = useRef();
+  // let chatText = []
 
-//   let chatControls = useRef();
+  let chatControls = useRef();
 
-//   // Adjust the webSocket protocol to what is being used for HTTP
+  // Adjust the webSocket protocol to what is being used for HTTP
 // const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
 // const socket = new WebSocket(`${protocol}://${window.location.host}/ws`);
 
-// // Display that we have opened the webSocket
+// Display that we have opened the webSocket
 // socket.onopen = (event) => {
 //   appendMsg('system', 'websocket', 'connected');
 // };
 
-// // Display messages we receive from our friends
+// Display messages we receive from our friends
 // socket.onmessage = async (event) => {
 //   const text = await event.data.text();
 //   const chat = JSON.parse(text);
@@ -35,7 +35,7 @@ export function Chat({}) {
 //   document.querySelector('#chat-controls').disabled = true;
 // };
 
-// // Send a message over the webSocket
+// Send a message over the webSocket
 // function sendMessage() {
 //   let msgEl = newMessage.current.value;
 //   let msg = msgEl;
@@ -47,8 +47,9 @@ export function Chat({}) {
 //   }
 // }
 
-// // Create one long list of messages
+// Create one long list of messages
 // function appendMsg(cls, from, msg) {
+//   // const chatText = document.querySelector('#chat-text');
 //   const chatEl = document.createElement('div');
 //   chatEl.innerHTML = `<span class="${cls}">${from}</span>: ${msg}</div>`;
 //   setText(chatText + chatEl);
