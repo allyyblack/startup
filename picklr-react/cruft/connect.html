@@ -1,0 +1,58 @@
+<main>
+<h2>Welcome to Connect, <span id="currentUser"></span>!</h2>
+<p>Explore and connect with other Picklrs.</p>
+<ul id="userList"></ul>
+
+</main>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const storedUserName = localStorage.getItem("userName");
+      const storedImageLink = localStorage.getItem("imageLink");
+      const currentUser = document.getElementById("currentUser");
+      currentUser.innerHTML = storedUserName;
+
+      var storedUsers = JSON.parse(localStorage.getItem("newUserss"));
+
+      if (!storedUsers) {
+        storedUsers = [];
+      }
+
+      if (storedUserName && storedImageLink) {
+
+        const newUser = {name: storedUserName, imageLink: storedImageLink};
+
+        storedUsers.push(newUser);
+
+        localStorage.removeItem("userName");
+        localStorage.removeItem("imageLink");
+
+        localStorage.setItem("newUserss", JSON.stringify(storedUsers));
+      }
+      
+      if (storedUsers) {
+        storedUsers.forEach(function (user) {
+            const userImage = document.createElement("img");
+            const userName = document.createElement("h2");
+            const userChatLink = document.createElement("p");
+
+            userImage.src = user.imageLink;
+            userName.textContent = user.name;
+            userChatLink.innerHTML = `<NavLink to="chat">Chat</a>`;
+
+            const userContainer = document.createElement("li");
+            userContainer.appendChild(userImage);
+
+            const personInfo = document.createElement("div");
+            personInfo.className = "person-info";
+            personInfo.appendChild(userName);
+            personInfo.appendChild(userChatLink);
+            userContainer.appendChild(personInfo);
+
+            const userList = document.getElementById("userList");
+            userList.appendChild(userContainer);
+          });
+      }
+  });
+</script>
+</body>

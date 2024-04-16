@@ -1,0 +1,79 @@
+<head>
+  <script src="login.js"></script>
+  <title>Picklr HTML</title>
+  <link rel="stylesheet" href="main.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("button").click(function(){
+        $("#div1").toggle();
+        $("#div2").toggle();
+
+      });
+    });
+  </script>
+
+
+</head>
+<body>
+  <header>
+    <h1>Picklr</h1>
+    <nav>
+      <menu id="displayMenu" style="display: none">
+        <li><a href="index.html">Home</a></li>
+          <li><a href="connect.html">Connect</a></li>
+          <li><a href="chat.html">Chat</a></li>
+          <li><a href="about.html">About</a></li>
+      </menu>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome</h1>
+    <p>Login to connect with picklrs</p>
+    <button>New to Picklr?</button>
+    <hr>
+
+    <label for="newName">Name</label>
+    <input type="text" id="newName" placeholder="Your name here" required />
+
+    <label for="newUserPassword">Password</label>
+    <input type="password" id="newUserPassword" placeholder="Your password here" required />
+
+    <!-- Login -->
+    <div id="div2">
+    <form onsubmit="loginUser(); return false;">
+      <button type="auth" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+
+    <!-- Create new user -->
+    <div id="div1" style="display:none;">
+      <form onsubmit="createUser(); return false;">
+        <label for="imageLink">Profile Image Link</label>
+        <input type="url" id="imageLink" placeholder="Enter image link" required />
+        <button type="submit" class="btn btn-primary">Create User</button>
+      </form>
+    </div>
+
+    <!-- Error dialog -->
+    <div class="modal fade" id="msgModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-dark">
+          <div class="modal-body"></div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <span class="text-reset">Author Name: Ally Black</span>
+    <div><a href=https://github.com/allyyblack/startup.git>My GitHub repo</a></div>
+  </footer>
+</body>
