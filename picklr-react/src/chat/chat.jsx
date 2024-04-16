@@ -1,9 +1,5 @@
 import React, { useState, useRef } from "react";
 import { TextField } from '@material-ui/core';
-import Parser from 'html-react-parser';
-
-// import "/chatClient.js";
-// import { sendMessage } from '/chatClient.js';
 
 export function Chat({}) {
   let newMessage = useRef();
